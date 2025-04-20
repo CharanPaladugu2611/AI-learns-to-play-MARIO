@@ -90,6 +90,11 @@ Epsilon Decay: from 1.0 to 0.05 linearly over 50,000 steps
 
 * Our model achieved over 2,700 average reward in just 1,250 episodes, outperforming the baseline CNN+DDQN that needed 10k episodes to reach 2,250.
 * The SWIN Transformer’s shifted windows enhanced representation learning by enabling localized self-attention while preserving computational efficiency.
+* The below GIF shows the agent playing the game after 1,250 episodes
+
+<p align="center">
+  <img src="Simulation_1250episodes.gif" width="70%" alt="Demo GIF" />
+</p>
 
 ## 🚧 Future Work
 * Extend to multi-agent scenarios (e.g., adversarial Mario)
