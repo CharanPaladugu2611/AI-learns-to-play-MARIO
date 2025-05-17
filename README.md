@@ -5,6 +5,8 @@ This repository presents a deep reinforcement learning (DRL) approach to train a
 
 The architecture is designed to tackle the complexity of temporally dependent, pixel-based decision-making under partial observability in dynamic environments. Our model demonstrates faster convergence and superior performance over traditional CNN-based agents.
 
+---
+
 ## 🧠 Motivation
 Traditional DRL methods like DQN and vanilla CNNs fall short when facing:
 
@@ -15,6 +17,8 @@ Traditional DRL methods like DQN and vanilla CNNs fall short when facing:
 * Instabilities in Q-value estimation
 
 To address these, we propose a DDQN-based agent with ResNet-18 for deep spatial feature encoding and SWIN Transformer for attention-based fine-grained decision-making. Additionally, we reduce the action space to significantly enhance convergence speed and learning reliability.
+
+---
 
 ## 🛠️ Architecture
 ### 🧮 Algorithm
@@ -54,6 +58,8 @@ Reduced from 256 native actions → 5 essential discrete actions:
 
 This minimalistic action space was critical to stabilizing early-stage exploration and enabling fast convergence.
 
+---
+
 ## 🧪 Environment & Preprocessing
 * Platform: ``` gym-super-mario-bros v0 ```
 
@@ -66,7 +72,7 @@ This minimalistic action space was critical to stabilizing early-stage explorati
   * ```FrameStack```: Maintains a buffer of last 4 frames for temporal awareness
 
 * Observation Shape: ```(4, 64, 64)```
-
+---
 ## 🔍 Training Procedure
 ### Memory Management
 * Experience Replay Buffer: deque(maxlen=100_000)
@@ -82,6 +88,8 @@ This minimalistic action space was critical to stabilizing early-stage explorati
 ### Exploration Strategy
 Epsilon Decay: from 1.0 to 0.05 linearly over 50,000 steps
 
+---
+
 ## 📈 Results
 | __Model__ | __Avg Reward @ 1.25k epiosdes__|__Avg Reward @ 10k episodes__|
 |:---:|:---:|:---:|
@@ -95,6 +103,10 @@ Epsilon Decay: from 1.0 to 0.05 linearly over 50,000 steps
 <p align="center">
   <img src="Simulation_1250episodes.gif" width="70%" alt="Demo GIF" />
 </p>
+
+
+---
+
 
 ## 🚧 Future Work
 * Extend to multi-agent scenarios (e.g., adversarial Mario)
